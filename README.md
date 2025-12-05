@@ -14,7 +14,7 @@ docker run -it node:22-bullseye bash
 apt-get update && apt-get purge -y xdg-utils || true   # ensure no xdg-open
 corepack enable || true                                # optional, harmless
 
-git clone <this-repo-url> repro-browser-script
+git clone https://github.com/robbchar/repro-browser-script
 cd repro-browser-script
 npm ci
 ./scripts/run-repro.sh
