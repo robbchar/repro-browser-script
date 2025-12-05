@@ -29,3 +29,19 @@ npm ci
 - `scripts/run-repro.sh` sets `BROWSER` to that script and disables telemetry, then runs `npm run storybook`.
 - If `xdg-open` is installed, you may not see the crash. Remove `xdg-utils` (or use the Docker flow above) to trigger it.
 
+## For CodeSpaces:
+To make sure xdg-utils is not there:
+
+#### fix the apt lists dir if needed
+```bash
+sudo rm -rf /var/lib/apt/lists/*
+sudo mkdir -p /var/lib/apt/lists/partial
+```
+
+#### refresh and remove xdg-utils (xdg-open)
+```bash
+sudo apt-get clean
+sudo apt-get update
+sudo apt-get purge -y xdg-utils
+```
+
